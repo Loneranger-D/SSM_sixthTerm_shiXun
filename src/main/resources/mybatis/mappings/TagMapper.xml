@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<mapper namespace="com.mapper.TagMapper">
+	<select id="listTag"  resultType="Tag">
+		select * from tag
+	</select>
+	
+	<insert id="addTag">
+		insert into tag (tag_Name, tag_Description) values (#{tagName}, #{tagDescription})
+	</insert>
+	
+	<select id="getTagById" resultType="Tag">
+		select * from tag where tag_id=#{tagId}
+	</select>
+	
+	<update id="updateTag">
+		update tag set tag_name=#{tagName}, tag_description=#{tagDescription} where tag_id=#{tagId}
+	</update>
+</mapper>
